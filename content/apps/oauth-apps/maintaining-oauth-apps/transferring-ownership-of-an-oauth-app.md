@@ -1,5 +1,5 @@
 ---
-title: Transferring ownership of an OAuth App
+title: Transferring ownership of an OAuth app
 intro: '{% data reusables.shortdesc.transferring_ownership_of_oauth_apps %}'
 redirect_from:
   - /apps/building-integrations/managing-oauth-apps/transferring-ownership-of-an-oauth-app
@@ -9,22 +9,18 @@ redirect_from:
 versions:
   fpt: '*'
   ghes: '*'
-  ghae: '*'
   ghec: '*'
 topics:
-  - OAuth Apps
+  - OAuth apps
 shortTitle: Transfer ownership
 ---
 {% data reusables.user-settings.access_settings %}
 {% data reusables.user-settings.developer_settings %}
 {% data reusables.user-settings.oauth_apps %}
-4. Select the {% data variables.product.prodname_oauth_app %} you want to modify.
-![App selection](/assets/images/oauth-apps/oauth_apps_choose_app_post2dot12.png)
-5. Click **Transfer ownership**.
-![Button to transfer ownership](/assets/images/oauth-apps/oauth_apps_transfer_ownership.png)
-6. Type the name of the {% data variables.product.prodname_oauth_app %} you want to transfer.
-![Field to enter the name of the app to transfer](/assets/images/oauth-apps/oauth_apps_transfer_oauth_name.png)
-7. Type the name of the user or organization you want to transfer the {% data variables.product.prodname_oauth_app %} to.
-![Field to enter the user or org to transfer to](/assets/images/oauth-apps/oauth_apps_transfer_new_owner.png)
-8. Click **Transfer this application**.
-![Button to transfer the application](/assets/images/oauth-apps/oauth_apps_transfer_application.png)
+1. Select the {% data variables.product.prodname_oauth_app %} you want to modify.
+1. Click **Transfer ownership**.
+1. To confirm the transfer, in the text field, type the name of the {% data variables.product.prodname_oauth_app %} you want to transfer.
+1. Under "New owner's {% data variables.product.prodname_dotcom %} username or organization name," type the name of the user or organization you want to transfer the {% data variables.product.prodname_oauth_app %} to.
+1. Click **Transfer this application**.
+
+Once you initiate the transfer, the new owner needs to navigate to their {% data variables.product.prodname_oauth_app %}s page. From there, they should see the app listed under "Pending transfer requests". They need to click on the app name and then click **Complete transfer**.

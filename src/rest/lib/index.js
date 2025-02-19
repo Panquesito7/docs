@@ -1,10 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 
-import { readCompressedJsonFileFallback } from '../../../lib/read-json-file.js'
-import { getAutomatedPageMiniTocItems } from '../../../lib/get-mini-toc-items.js'
-import { allVersions, getOpenApiVersion } from '../../../lib/all-versions.js'
-import languages from '../../../lib/languages.js'
+import { readCompressedJsonFileFallback } from '#src/frame/lib/read-json-file.js'
+import { getAutomatedPageMiniTocItems } from '#src/frame/lib/get-mini-toc-items.js'
+import { allVersions, getOpenApiVersion } from '#src/versions/lib/all-versions.js'
+import languages from '#src/languages/lib/languages.js'
 
 export const REST_DATA_DIR = 'src/rest/data'
 export const REST_SCHEMA_FILENAME = 'schema.json'
@@ -71,7 +71,7 @@ export const categoriesWithoutSubcategories = fs
 // and the OpenApi Version bc it's not the same
 export default async function getRest(version, apiVersion, category, subCategory) {
   const openApiVersion = getOpenApiVersion(version)
-  const openapiSchemaName = apiVersion ? `${openApiVersion}.${apiVersion}` : `${openApiVersion}`
+  const openapiSchemaName = apiVersion ? `${openApiVersion}-${apiVersion}` : `${openApiVersion}`
   const apiDate = apiVersion || NOT_API_VERSIONED
   const fileName = path.join(REST_DATA_DIR, openapiSchemaName, REST_SCHEMA_FILENAME)
   if (!restOperations.has(openApiVersion)) {
@@ -103,7 +103,7 @@ export async function getRestMiniTocItems(
   restOperations,
   language,
   version,
-  context
+  context,
 ) {
   const apiDate = apiVersion || NOT_API_VERSIONED
 
